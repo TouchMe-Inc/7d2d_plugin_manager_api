@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{4E66BCE7-62AD-41EA-B0A1-B981B758C00A}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>PluginManager.Api</RootNamespace>
+        <AssemblyName>PluginManager.Api</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="BasePlugin.cs" />
+        <Compile Include="Capabilities\ICapability.cs" />
+        <Compile Include="Capabilities\ICapabilityRegistry.cs"/>
+        <Compile Include="Capabilities\Implementations\ChatMessenger\IChatMessenger.cs" />
+        <Compile Include="Capabilities\Implementations\Commands\CommandDefinition.cs" />
+        <Compile Include="Capabilities\Implementations\Commands\ICommandContext.cs" />
+        <Compile Include="Capabilities\Implementations\Commands\ICommandDefinition.cs" />
+        <Compile Include="Capabilities\Implementations\Commands\ICommandManager.cs" />
+        <Compile Include="Capabilities\Implementations\Commands\ICommandRegistry.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\ChatMessageEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\CreateWorldDoneEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\EntityDamageEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\EntityKilledEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\GameAwakeEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\GameShutdownEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\GameStartingEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\GameUpdateEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\MinEventLogMessageEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\PlayerDisconnectedEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\PlayerJoinedGameEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\PlayerLoginEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\PlayerSpawnedInWorldEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\PlayerSpawningEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\SavePlayerDataEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\ServerRegisteredEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\TileEntityAccessAttemptEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\UnityUpdateEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\WorldShuttingDownEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\IEventHandlers.cs" />
+        <Compile Include="Capabilities\Implementations\Events\IEventRunner.cs" />
+        <Compile Include="Capabilities\Implementations\Events\IGameEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Translations\IPlayerLocalization.cs" />
+        <Compile Include="Capabilities\Implementations\Translations\IPlayerLocalizationFactory.cs" />
+        <Compile Include="Capabilities\Implementations\Translations\IPlayerLanguageStore.cs" />
+        <Compile Include="Capabilities\Implementations\Translations\WithTemporaryCulture.cs" />
+        <Compile Include="Capabilities\Implementations\Logger\ILogger.cs" />
+        <Compile Include="Capabilities\Implementations\Utils\IPlayerUtil.cs" />
+        <Compile Include="Contracts\BbCodeSupportMode.cs" />
+        <Compile Include="Contracts\ChatType.cs" />
+        <Compile Include="Contracts\ClientInfo.cs" />
+        <Compile Include="Contracts\EnumLandClaimOwner.cs" />
+        <Compile Include="Contracts\RespawnType.cs" />
+        <Compile Include="Contracts\TileEntityType.cs" />
+        <Compile Include="Contracts\Vector3.cs" />
+        <Compile Include="Contracts\Vector3Int.cs" />
+        <Compile Include="Hooks\HookMode.cs"/>
+        <Compile Include="Hooks\HookResult.cs"/>
+        <Compile Include="IPlugin.cs"/>
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Proxy\DelegateProxy.cs" />
+        <Compile Include="Proxy\ProxyObject.cs" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+</Project>
