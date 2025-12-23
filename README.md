@@ -1,0 +1,1 @@
+# 7d2d_plugin_manager_api
