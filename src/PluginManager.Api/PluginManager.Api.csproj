@@ -40,8 +40,19 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Capabilities\ICapabilityRegistry.cs" />
+        <Compile Include="Capabilities\IPluginCapability.cs" />
+        <Compile Include="Capabilities\PluginCapability.cs" />
+        <Compile Include="Exposed\Events\GameEvents\ChatMessageEvent.cs" />
+        <Compile Include="Exposed\Events\IGameEvent.cs" />
+        <Compile Include="Exposed\Events\IModEvents.cs" />
+        <Compile Include="Hooks\HookMode.cs" />
+        <Compile Include="Hooks\HookResult.cs" />
         <Compile Include="IPlugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Exposed\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>

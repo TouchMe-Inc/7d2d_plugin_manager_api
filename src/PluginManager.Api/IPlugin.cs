@@ -1,4 +1,6 @@
-﻿namespace PluginManager.Api;
+﻿using PluginManager.Api.Capabilities;
+
+namespace PluginManager.Api;
 
 public interface IPlugin
 {
@@ -29,13 +31,11 @@ public interface IPlugin
 
     /// <summary>
     /// This method is called on plugin load and should be treated as plugin constructor.
-    /// Called with `true` on a hot reload (DLL file replaced in plugins folder)
     /// </summary>
-    void Load(bool hotReload);
+    void Load(ICapabilityRegistry registry);
 
     /// <summary>
     /// Will be called on plugin unload. In this method the plugin should cleanup any extra resources.
-    /// Event handlers, listeners etc. will automatically be deregistered.
     /// </summary>
-    void Unload(bool hotReload);
+    void Unload(ICapabilityRegistry registry);
 }
