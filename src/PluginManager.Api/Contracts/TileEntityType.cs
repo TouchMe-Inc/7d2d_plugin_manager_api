@@ -1,6 +1,6 @@
 ﻿namespace PluginManager.Api.Contracts;
 
-public enum TileEntityType
+public enum TileEntityType : byte
 {
     None = 0,
     Collector = 3,
