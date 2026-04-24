@@ -71,10 +71,7 @@
         <Compile Include="Capabilities\Implementations\Events\IEventRunner.cs" />
         <Compile Include="Capabilities\Implementations\Events\IGameEvent.cs" />
         <Compile Include="Capabilities\Implementations\GeoIp\IGeoIpDataStorage.cs" />
-        <Compile Include="Capabilities\Implementations\Translations\IPlayerLocalization.cs" />
-        <Compile Include="Capabilities\Implementations\Translations\IPlayerLocalizationFactory.cs" />
-        <Compile Include="Capabilities\Implementations\Translations\IPlayerLanguageStore.cs" />
-        <Compile Include="Capabilities\Implementations\Translations\WithTemporaryCulture.cs" />
+        <Compile Include="Capabilities\Implementations\Language\IPlayerLanguageStore.cs" />
         <Compile Include="Capabilities\Implementations\Logger\ILogger.cs" />
         <Compile Include="Capabilities\Implementations\Utils\IGamePrefsUtil.cs" />
         <Compile Include="Capabilities\Implementations\Utils\IGameStatsUtil.cs" />
