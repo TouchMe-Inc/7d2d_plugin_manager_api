@@ -61,6 +61,7 @@
         <Compile Include="Capabilities\Implementations\Events\GameEvents\GameMessageEvent.cs" />
         <Compile Include="Capabilities\Implementations\Events\GameEvents\GameShutdownEvent.cs" />
         <Compile Include="Capabilities\Implementations\Events\GameEvents\GameStartingEvent.cs" />
+        <Compile Include="Capabilities\Implementations\Events\GameEvents\SecondTickEvent.cs" />
         <Compile Include="Capabilities\Implementations\Events\GameEvents\GameUpdateEvent.cs" />
         <Compile Include="Capabilities\Implementations\Events\GameEvents\BlockPlacedEvent.cs" />
         <Compile Include="Capabilities\Implementations\Events\GameEvents\MinEventLogMessageEvent.cs" />
